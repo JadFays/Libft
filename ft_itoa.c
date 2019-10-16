@@ -6,17 +6,17 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 21:05:35 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/15 22:32:49 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/16 02:10:28 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-static	int	ft_count(int n)
+static int	ft_count(int n)
 {
 	int power;
 	int i;
-	
+
 	i = 1;
 	power = 10;
 	while (power <= n)
@@ -52,9 +52,3 @@ char		*ft_itoa(int n)
 	}
 	return (str);
 }
-
-/*int		main(void)
-{
-	printf("%s\n", ft_itoa(+1238742));
-	return (0);
-}*/

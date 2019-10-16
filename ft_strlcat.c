@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:32:25 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/10 13:57:31 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/16 02:21:17 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 		j++;
 	}
-	dst [i] = '\0';
+	dst[i] = '\0';
 	return (rslt);
 }

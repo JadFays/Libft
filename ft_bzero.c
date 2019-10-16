@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:29:33 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/08 16:29:52 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/16 02:08:29 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, unsigned int n)
 {
-	char*ptr;
-	unsigned int i;
+	char			*ptr;
+	unsigned int	i;
 
 	i = 0;
 	ptr = (char *)s;

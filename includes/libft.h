@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:06:40 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/15 23:19:46 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/16 01:32:10 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,20 @@
 # define LIBFT_H
 
 #include <fcntl.h>
-#include <assert.h>
-#include <stdio.h>
+//#include <assert.h>
+//#include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+//#include <ctype.h>
+//#include <string.h>
 #include <unistd.h>
 
 typedef unsigned long size_t;
+
+typedef struct	s_list
+{
+	void *content;
+	struct s_list *next;
+}				t_list;
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -34,6 +40,7 @@ int		ft_tolower(int c);
 int		ft_power(int nb, int power);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
+int		ft_lstsize(t_list *lst);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
@@ -55,8 +62,12 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_lstadd_front(t_list **alst, t_list *new);
+void	ft_lstadd_back(t_list **alst, t_list *new);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif

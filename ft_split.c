@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:27:12 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/15 21:04:39 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/16 02:22:18 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static char		*ft_malloc_object(char const *s, char c)
 
 static int		ft_count_object(char const *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	while (s[i] == c)
@@ -55,7 +55,7 @@ static int		ft_count_object(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		nb_object;
@@ -81,19 +81,3 @@ char	**ft_split(char const *s, char c)
 	tab[j] = NULL;
 	return (tab);
 }
-
-/*int		main(void)
-{
-	char **tab;
-	int i = 0;
-	char const str[] = "BonjourB nBon toBto clocloB";
-	char c = 'B';
-
-	tab = ft_split(str, c);
-	while (tab[i])
-	{
-		printf("tab[%d] = %s\n", i, tab[i]);
-		i++;
-	}
-	return (0);
-}*/

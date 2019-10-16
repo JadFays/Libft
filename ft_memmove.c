@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:09:39 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/10 15:26:36 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/16 02:15:16 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
-	char temp[ft_strlen(src)];
+	size_t	i;
+	char	temp[ft_strlen(src)];
 
 	i = 0;
 	while (((char*)src)[i] != '\0')
