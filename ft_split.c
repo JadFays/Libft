@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:27:12 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/16 02:22:18 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/23 02:36:46 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char			**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
+	if (!(s))
+		return (NULL);
 	nb_object = ft_count_object(s, c);
 	if (!(tab = (char**)malloc(sizeof(char*) * (nb_object + 1))))
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 23:01:38 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/15 23:17:47 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/23 04:04:50 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!(s))
+		return ;
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

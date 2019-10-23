@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:32:25 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/16 02:21:17 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/23 00:32:22 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		j++;
 	rslt = 0;
 	if (i >= size)
-		rslt = j + size;
+		return (j + size);
 	else
 		rslt = i + j;
 	j = 0;

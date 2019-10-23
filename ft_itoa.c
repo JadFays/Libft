@@ -6,20 +6,20 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 21:05:35 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/16 02:10:28 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/23 03:34:43 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-static int	ft_count(int n)
+static int	ft_count(unsigned int n)
 {
-	int power;
-	int i;
+	int				i;
+	unsigned int	power;
 
 	i = 1;
 	power = 10;
-	while (power <= n)
+	while (power <= n && i < 10)
 	{
 		power *= 10;
 		i++;
@@ -29,26 +29,29 @@ static int	ft_count(int n)
 
 char		*ft_itoa(int n)
 {
-	int		len;
-	int		neg;
-	char	*str;
+	char			*str;
+	int				neg;
+	int				size;
+	unsigned int	number;
 
-	neg = (n < 0) ? 1 : 0;
+	neg = 0;
 	if (n < 0)
-		n *= -1;
-	len = ft_count(n);
-	if (!(str = (char*)malloc(sizeof(char) * (len + neg + 1))))
-		return (NULL);
-	str[len] = '\0';
-	if (neg)
-		str[0] = '-';
-	else
-		len--;
-	while (len >= 0 + neg)
 	{
-		str[len] = n % 10 + 48;
-		n /= 10;
-		len--;
+		number = n * -1;
+		neg = 1;
+	}
+	else
+		number = n;
+	size = ft_count(number) + neg;
+	if (!(str = (char*)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	if (neg == 1)
+		str[0] = '-';
+	str[size] = '\0';
+	while (--size >= neg + 0)
+	{
+		str[size] = number % 10 + 48;
+		number /= 10;
 	}
 	return (str);
 }

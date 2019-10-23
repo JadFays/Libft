@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 16:28:11 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/22 23:51:51 by fajadron         ###   ########.fr       */
+/*   Created: 2019/10/22 19:12:01 by fajadron          #+#    #+#             */
+/*   Updated: 2019/10/22 19:12:08 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	new->next = *alst;
+	*alst = new;
 }

@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:07:26 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/15 19:22:37 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/23 01:42:50 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 	size_t	i;
 
+	if (!(s1))
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);

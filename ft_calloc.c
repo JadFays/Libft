@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:34:40 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/15 18:58:25 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/23 01:36:21 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (!count || !size)
 		return (NULL);
-	if (!(tab = (char*)malloc(sizeof(char) * (count * size))))
+	if (!(tab = malloc(count * size)))
 		return (NULL);
-	ft_bzero(tab, size);
+	ft_bzero(tab, (count * size));
 	return (tab);
 }
