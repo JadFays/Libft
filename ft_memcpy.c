@@ -6,11 +6,11 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:50:28 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/22 21:35:19 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:47:04 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:27:12 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/23 02:36:46 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/25 14:17:37 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 static char		*ft_malloc_object(char const *s, char c)
 {
@@ -55,6 +55,19 @@ static int		ft_count_object(char const *s, char c)
 	return (count);
 }
 
+static void		ft_error_malloc(char **tab, int len)
+{
+	int		i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
 char			**ft_split(char const *s, char c)
 {
 	char	**tab;
@@ -62,7 +75,7 @@ char			**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
-	if (!(s))
+	if (!s)
 		return (NULL);
 	nb_object = ft_count_object(s, c);
 	if (!(tab = (char**)malloc(sizeof(char*) * (nb_object + 1))))
@@ -73,7 +86,11 @@ char			**ft_split(char const *s, char c)
 	j = 0;
 	while (*s != '\0' && j < nb_object)
 	{
-		tab[j] = ft_malloc_object(s, c);
+		if (!(tab[j] = ft_malloc_object(s, c)))
+		{
+			ft_error_malloc(tab, nb_object);
+			return (NULL);
+		}
 		while (*s != c)
 			s++;
 		while (*s == c)

@@ -6,11 +6,11 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 18:50:44 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/23 03:36:42 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/25 13:31:13 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		len;
 	char	*str;
 
-	if (!(s))
+	if (!s || !f)
 		return (NULL);
 	i = 0;
 	len = ft_strlen(s);

@@ -6,13 +6,11 @@
 #    By: fajadron <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/22 20:17:57 by fajadron          #+#    #+#              #
-#    Updated: 2019/10/22 21:06:58 by fajadron         ###   ########.fr        #
+#    Updated: 2019/10/25 13:11:24 by fajadron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-INCLUDE = ./includes/libft.h
 
 CC = GCC
 
@@ -33,10 +31,11 @@ OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
 .c.o:
-		$(CC) $(CFLAG) -c $< -o ${<:.c=.o}
+			$(CC) $(CFLAG) -c $< -o ${<:.c=.o}
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJS) libft.h
 			$(ARRC) $(NAME) $(OBJS)
+			$(RLIB) $(NAME)
 
 all:		$(NAME)
 
@@ -48,7 +47,8 @@ fclean:		clean
 
 re:			fclean all
 
-bonus:		$(OBJS_BONUS)
+bonus:		$(OBJS_BONUS) libft.h
 			$(ARRC) $(NAME) $(OBJS_BONUS)
+			$(RLIB) $(NAME)
 
 .PHONY:		all clean fclean re $(BONUS)

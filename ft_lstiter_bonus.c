@@ -6,15 +6,15 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 19:31:20 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/22 19:33:13 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/25 13:57:28 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/libft.h"
+#include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst != NULL)
+	while (lst != NULL && f != NULL)
 	{
 		f(lst->content);
 		lst = lst->next;

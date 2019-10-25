@@ -6,11 +6,11 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 19:13:06 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/22 19:13:11 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/24 18:38:23 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

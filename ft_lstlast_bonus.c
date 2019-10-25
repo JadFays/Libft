@@ -6,15 +6,15 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 19:13:59 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/23 04:12:27 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/25 13:39:25 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)
+	if (!lst)
 		return (NULL);
 	while (lst->next != NULL)
 		lst = lst->next;

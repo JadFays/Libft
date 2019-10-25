@@ -6,15 +6,15 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 22:49:24 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/23 04:03:43 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/25 13:33:20 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!(s))
+	if (!s)
 		return ;
 	write(fd, s, ft_strlen(s));
 }

@@ -6,11 +6,11 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:22:56 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/23 02:35:48 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/25 13:28:17 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 static	int		ft_check_set(char c, char const *set)
 {
@@ -62,13 +62,15 @@ char			*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	char	*new_str;
 
-	if (!(s1))
+	if (!s1)
 		return (NULL);
-	size  = ft_strcount(s1, set);
+	else if (!set)
+		return ((char*)s1);
+	size = ft_strcount(s1, set);
 	if (!(new_str = (char*)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	i = 0;
-	start  = 0;
+	start = 0;
 	while ((ft_check_set(s1[i + start], set)) == 1)
 		start++;
 	while (i < size)
