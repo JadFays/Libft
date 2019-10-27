@@ -6,13 +6,14 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:06:40 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/25 12:31:30 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/26 14:11:28 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <ctype.h>

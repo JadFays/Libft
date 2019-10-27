@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:27:12 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/25 14:17:37 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/26 20:44:30 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ static char		*ft_malloc_object(char const *s, char c)
 	char	*object;
 
 	i = 0;
-	while (s[i] != c)
+	while (s[i] != c && s[i])
+	{
 		i++;
+	}
 	if (!(object = (char*)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	i = 0;
-	while (*s != c)
+	while (*s != c && *s)
 	{
 		object[i] = *s;
 		i++;
@@ -39,14 +41,14 @@ static int		ft_count_object(char const *s, char c)
 	int	count;
 
 	i = 0;
-	while (s[i] == c)
+	while (s[i] != '\0' && s[i] == c)
 		i++;
 	count = (s[i] != '\0') ? 1 : 0;
 	while (s[i] != '\0')
 	{
 		while (s[i] == c && s[i + 1] != '\0')
 		{
-			if (s[i + 2] != c && s[i + 2] != '\0')
+			if (s[i + 1] != c)
 				count++;
 			i++;
 		}
@@ -68,11 +70,19 @@ static void		ft_error_malloc(char **tab, int len)
 	free(tab);
 }
 
+static char		*ft_while_char(char const *s, char c)
+{
+	while (*s != c && *s != '\0')
+		s++;
+	while (*s == c && *s != '\0')
+		s++;
+	return ((char*)s);
+}
+
 char			**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		nb_object;
-	int		i;
 	int		j;
 
 	if (!s)
@@ -80,7 +90,6 @@ char			**ft_split(char const *s, char c)
 	nb_object = ft_count_object(s, c);
 	if (!(tab = (char**)malloc(sizeof(char*) * (nb_object + 1))))
 		return (NULL);
-	i = 0;
 	while (*s == c)
 		s++;
 	j = 0;
@@ -91,10 +100,7 @@ char			**ft_split(char const *s, char c)
 			ft_error_malloc(tab, nb_object);
 			return (NULL);
 		}
-		while (*s != c)
-			s++;
-		while (*s == c)
-			s++;
+		s = ft_while_char(s, c);
 		j++;
 	}
 	tab[j] = NULL;

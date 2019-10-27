@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:22:56 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/25 13:28:17 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/26 17:08:57 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	char	*new_str;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
-	else if (!set)
-		return ((char*)s1);
 	size = ft_strcount(s1, set);
 	if (!(new_str = (char*)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
