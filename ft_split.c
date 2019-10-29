@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:27:12 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/26 20:44:30 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/28 16:21:26 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char			**ft_split(char const *s, char c)
 	{
 		if (!(tab[j] = ft_malloc_object(s, c)))
 		{
-			ft_error_malloc(tab, nb_object);
+			ft_error_malloc(tab, j);
 			return (NULL);
 		}
 		s = ft_while_char(s, c);

@@ -6,7 +6,7 @@
 /*   By: fajadron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:50:28 by fajadron          #+#    #+#             */
-/*   Updated: 2019/10/24 16:47:04 by fajadron         ###   ########.fr       */
+/*   Updated: 2019/10/29 14:01:14 by fajadron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		return (NULL);
 	while (i < n)
 	{
-		((char*)dst)[i] = ((char*)src)[i];
+		((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
 		i++;
 	}
 	return (dst);
